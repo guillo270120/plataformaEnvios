@@ -608,64 +608,63 @@ class _UsersWidgetState extends State<UsersWidget> {
                                                                 MainAxisSize
                                                                     .max,
                                                             children: [
-                                                              if (listViewUsersRecord
-                                                                      .rol ==
-                                                                  'admin')
-                                                                FlutterFlowIconButton(
-                                                                  borderColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primary,
-                                                                  borderRadius:
-                                                                      5.0,
-                                                                  borderWidth:
-                                                                      1.0,
-                                                                  buttonSize:
-                                                                      40.0,
-                                                                  icon: Icon(
-                                                                    Icons.check,
-                                                                    color: FlutterFlowTheme.of(
+                                                              FlutterFlowIconButton(
+                                                                borderColor:
+                                                                    FlutterFlowTheme.of(
                                                                             context)
                                                                         .primary,
-                                                                    size: 24.0,
-                                                                  ),
-                                                                  onPressed:
-                                                                      () async {
-                                                                    logFirebaseEvent(
-                                                                        'USERS_PAGE_check_ICN_ON_TAP');
-                                                                    logFirebaseEvent(
-                                                                        'IconButton_backend_call');
-
-                                                                    await listViewUsersRecord
-                                                                        .reference
-                                                                        .update(
-                                                                            createUsersRecordData(
-                                                                      rol:
-                                                                          'user',
-                                                                    ));
-                                                                    logFirebaseEvent(
-                                                                        'IconButton_alert_dialog');
-                                                                    await showDialog(
-                                                                      context:
-                                                                          context,
-                                                                      builder:
-                                                                          (alertDialogContext) {
-                                                                        return AlertDialog(
-                                                                          title:
-                                                                              Text('Rol Actualizado'),
-                                                                          content:
-                                                                              Text('El usuario ${listViewUsersRecord.displayName}ha dejado de ser administador de ${listViewUsersRecord.plataforma}'),
-                                                                          actions: [
-                                                                            TextButton(
-                                                                              onPressed: () => Navigator.pop(alertDialogContext),
-                                                                              child: Text('Ok'),
-                                                                            ),
-                                                                          ],
-                                                                        );
-                                                                      },
-                                                                    );
-                                                                  },
+                                                                borderRadius:
+                                                                    5.0,
+                                                                borderWidth:
+                                                                    1.0,
+                                                                buttonSize:
+                                                                    40.0,
+                                                                icon: Icon(
+                                                                  Icons.check,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  size: 24.0,
                                                                 ),
+                                                                onPressed:
+                                                                    () async {
+                                                                  logFirebaseEvent(
+                                                                      'USERS_PAGE_check_ICN_ON_TAP');
+                                                                  logFirebaseEvent(
+                                                                      'IconButton_backend_call');
+
+                                                                  await listViewUsersRecord
+                                                                      .reference
+                                                                      .update(
+                                                                          createUsersRecordData(
+                                                                    rol:
+                                                                        'admin',
+                                                                  ));
+                                                                  logFirebaseEvent(
+                                                                      'IconButton_alert_dialog');
+                                                                  await showDialog(
+                                                                    context:
+                                                                        context,
+                                                                    builder:
+                                                                        (alertDialogContext) {
+                                                                      return AlertDialog(
+                                                                        title: Text(
+                                                                            'Rol Actualizado'),
+                                                                        content:
+                                                                            Text('El usuario ${listViewUsersRecord.displayName}ahora es administador de ${listViewUsersRecord.plataforma}'),
+                                                                        actions: [
+                                                                          TextButton(
+                                                                            onPressed: () =>
+                                                                                Navigator.pop(alertDialogContext),
+                                                                            child:
+                                                                                Text('Ok'),
+                                                                          ),
+                                                                        ],
+                                                                      );
+                                                                    },
+                                                                  );
+                                                                },
+                                                              ),
                                                             ],
                                                           ),
                                                         ),

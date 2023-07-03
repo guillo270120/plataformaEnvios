@@ -196,7 +196,7 @@ class FFAppState extends ChangeNotifier {
     secureStorage.delete(key: 'ff_validacionZonaExtendida');
   }
 
-  String _nombrePlataforma = 'Estafeta';
+  String _nombrePlataforma = 'EnviaY';
   String get nombrePlataforma => _nombrePlataforma;
   set nombrePlataforma(String _value) {
     _nombrePlataforma = _value;
@@ -207,7 +207,7 @@ class FFAppState extends ChangeNotifier {
     secureStorage.delete(key: 'ff_nombrePlataforma');
   }
 
-  String _version = '1.1.0';
+  String _version = '1.1.1';
   String get version => _version;
   set version(String _value) {
     _version = _value;

@@ -47,11 +47,11 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
     _model.crearTelController ??= TextEditingController();
     _model.emailAddressLoginMobileController ??= TextEditingController();
     _model.passwordLoginMobileController ??= TextEditingController();
-    _model.emailRegisterController ??= TextEditingController();
-    _model.passwordLoginregisterController ??= TextEditingController();
-    _model.passwordConfirmController ??= TextEditingController();
-    _model.nombreRegisterController ??= TextEditingController();
-    _model.telefonoRegisterController ??= TextEditingController();
+    _model.emailRegistermobileController ??= TextEditingController();
+    _model.passwordLoginregistermobileController ??= TextEditingController();
+    _model.passwordConfirmMonbileController ??= TextEditingController();
+    _model.nombreRegistermobileController ??= TextEditingController();
+    _model.telefonoRegistermobileController ??= TextEditingController();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -1073,10 +1073,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                     .update({
                                                   ...createUsersRecordData(
                                                     displayName: _model
-                                                        .nombreRegisterController
+                                                        .crearNomController
                                                         .text,
                                                     phoneNumber: _model
-                                                        .telefonoRegisterController
+                                                        .crearTelController
                                                         .text,
                                                     rol: 'user',
                                                     status:
@@ -1092,7 +1092,6 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                         containerConfiguracionLocalRecord!
                                                             .nombrePlataforma,
                                                     saldo: 0.0,
-                                                    email: '',
                                                   ),
                                                   'filtros':
                                                       containerConfiguracionLocalRecord!
@@ -1524,7 +1523,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                         0.0, 20.0, 0.0, 0.0),
                                                 child: TextFormField(
                                                   controller: _model
-                                                      .emailRegisterController,
+                                                      .emailRegistermobileController,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     labelText: 'Email ',
@@ -1617,7 +1616,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                       ),
                                                   maxLines: null,
                                                   validator: _model
-                                                      .emailRegisterControllerValidator
+                                                      .emailRegistermobileControllerValidator
                                                       .asValidator(context),
                                                 ),
                                               ),
@@ -1627,9 +1626,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                         0.0, 12.0, 0.0, 0.0),
                                                 child: TextFormField(
                                                   controller: _model
-                                                      .passwordLoginregisterController,
+                                                      .passwordLoginregistermobileController,
                                                   obscureText: !_model
-                                                      .passwordLoginregisterVisibility,
+                                                      .passwordLoginregistermobileVisibility,
                                                   decoration: InputDecoration(
                                                     labelText: 'Password',
                                                     labelStyle: FlutterFlowTheme
@@ -1712,14 +1711,14 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                     suffixIcon: InkWell(
                                                       onTap: () => setState(
                                                         () => _model
-                                                                .passwordLoginregisterVisibility =
+                                                                .passwordLoginregistermobileVisibility =
                                                             !_model
-                                                                .passwordLoginregisterVisibility,
+                                                                .passwordLoginregistermobileVisibility,
                                                       ),
                                                       focusNode: FocusNode(
                                                           skipTraversal: true),
                                                       child: Icon(
-                                                        _model.passwordLoginregisterVisibility
+                                                        _model.passwordLoginregistermobileVisibility
                                                             ? Icons
                                                                 .visibility_outlined
                                                             : Icons
@@ -1740,7 +1739,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                             Color(0xFF0F1113),
                                                       ),
                                                   validator: _model
-                                                      .passwordLoginregisterControllerValidator
+                                                      .passwordLoginregistermobileControllerValidator
                                                       .asValidator(context),
                                                 ),
                                               ),
@@ -1750,9 +1749,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                         0.0, 12.0, 0.0, 0.0),
                                                 child: TextFormField(
                                                   controller: _model
-                                                      .passwordConfirmController,
+                                                      .passwordConfirmMonbileController,
                                                   obscureText: !_model
-                                                      .passwordConfirmVisibility,
+                                                      .passwordConfirmMonbileVisibility,
                                                   decoration: InputDecoration(
                                                     labelText: 'Password',
                                                     labelStyle: FlutterFlowTheme
@@ -1835,14 +1834,14 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                     suffixIcon: InkWell(
                                                       onTap: () => setState(
                                                         () => _model
-                                                                .passwordConfirmVisibility =
+                                                                .passwordConfirmMonbileVisibility =
                                                             !_model
-                                                                .passwordConfirmVisibility,
+                                                                .passwordConfirmMonbileVisibility,
                                                       ),
                                                       focusNode: FocusNode(
                                                           skipTraversal: true),
                                                       child: Icon(
-                                                        _model.passwordConfirmVisibility
+                                                        _model.passwordConfirmMonbileVisibility
                                                             ? Icons
                                                                 .visibility_outlined
                                                             : Icons
@@ -1863,7 +1862,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                             Color(0xFF0F1113),
                                                       ),
                                                   validator: _model
-                                                      .passwordConfirmControllerValidator
+                                                      .passwordConfirmMonbileControllerValidator
                                                       .asValidator(context),
                                                 ),
                                               ),
@@ -1873,7 +1872,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                         0.0, 20.0, 0.0, 0.0),
                                                 child: TextFormField(
                                                   controller: _model
-                                                      .nombreRegisterController,
+                                                      .nombreRegistermobileController,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     labelText:
@@ -1967,7 +1966,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                       ),
                                                   maxLines: null,
                                                   validator: _model
-                                                      .nombreRegisterControllerValidator
+                                                      .nombreRegistermobileControllerValidator
                                                       .asValidator(context),
                                                 ),
                                               ),
@@ -1977,7 +1976,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                         0.0, 20.0, 0.0, 0.0),
                                                 child: TextFormField(
                                                   controller: _model
-                                                      .telefonoRegisterController,
+                                                      .telefonoRegistermobileController,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     labelText:
@@ -2071,7 +2070,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                       ),
                                                   maxLines: null,
                                                   validator: _model
-                                                      .telefonoRegisterControllerValidator
+                                                      .telefonoRegistermobileControllerValidator
                                                       .asValidator(context),
                                                 ),
                                               ),
@@ -2088,10 +2087,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                     GoRouter.of(context)
                                                         .prepareAuthEvent();
                                                     if (_model
-                                                            .passwordLoginregisterController
+                                                            .passwordLoginMobileController
                                                             .text !=
                                                         _model
-                                                            .passwordConfirmController
+                                                            .passwordConfirmMonbileController
                                                             .text) {
                                                       ScaffoldMessenger.of(
                                                               context)
@@ -2109,10 +2108,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                         .createAccountWithEmail(
                                                       context,
                                                       _model
-                                                          .emailRegisterController
+                                                          .emailRegistermobileController
                                                           .text,
                                                       _model
-                                                          .passwordLoginregisterController
+                                                          .passwordLoginMobileController
                                                           .text,
                                                     );
                                                     if (user == null) {
@@ -2124,10 +2123,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                         .update({
                                                       ...createUsersRecordData(
                                                         displayName: _model
-                                                            .nombreRegisterController
+                                                            .crearNomController
                                                             .text,
                                                         phoneNumber: _model
-                                                            .telefonoRegisterController
+                                                            .crearTelController
                                                             .text,
                                                         rol: 'user',
                                                         status: containerConfiguracionLocalRecord!
@@ -2142,7 +2141,6 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                             containerConfiguracionLocalRecord!
                                                                 .nombrePlataforma,
                                                         saldo: 0.0,
-                                                        email: '',
                                                       ),
                                                       'filtros':
                                                           containerConfiguracionLocalRecord!

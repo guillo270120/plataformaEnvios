@@ -47,10 +47,12 @@ class LoginPageModel extends FlutterFlowModel {
   late bool passwordLoginMobileVisibility;
   String? Function(BuildContext, String?)?
       passwordLoginMobileControllerValidator;
-  // State field(s) for email_register widget.
-  TextEditingController? emailRegisterController;
-  String? Function(BuildContext, String?)? emailRegisterControllerValidator;
-  String? _emailRegisterControllerValidator(BuildContext context, String? val) {
+  // State field(s) for email_registermobile widget.
+  TextEditingController? emailRegistermobileController;
+  String? Function(BuildContext, String?)?
+      emailRegistermobileControllerValidator;
+  String? _emailRegistermobileControllerValidator(
+      BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Obligatorio';
     }
@@ -62,12 +64,12 @@ class LoginPageModel extends FlutterFlowModel {
     return null;
   }
 
-  // State field(s) for password_Loginregister widget.
-  TextEditingController? passwordLoginregisterController;
-  late bool passwordLoginregisterVisibility;
+  // State field(s) for password_Loginregistermobile widget.
+  TextEditingController? passwordLoginregistermobileController;
+  late bool passwordLoginregistermobileVisibility;
   String? Function(BuildContext, String?)?
-      passwordLoginregisterControllerValidator;
-  String? _passwordLoginregisterControllerValidator(
+      passwordLoginregistermobileControllerValidator;
+  String? _passwordLoginregistermobileControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Obligatorio';
@@ -76,11 +78,12 @@ class LoginPageModel extends FlutterFlowModel {
     return null;
   }
 
-  // State field(s) for password_Confirm widget.
-  TextEditingController? passwordConfirmController;
-  late bool passwordConfirmVisibility;
-  String? Function(BuildContext, String?)? passwordConfirmControllerValidator;
-  String? _passwordConfirmControllerValidator(
+  // State field(s) for password_ConfirmMonbile widget.
+  TextEditingController? passwordConfirmMonbileController;
+  late bool passwordConfirmMonbileVisibility;
+  String? Function(BuildContext, String?)?
+      passwordConfirmMonbileControllerValidator;
+  String? _passwordConfirmMonbileControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Obligatorio';
@@ -89,10 +92,11 @@ class LoginPageModel extends FlutterFlowModel {
     return null;
   }
 
-  // State field(s) for nombre_register widget.
-  TextEditingController? nombreRegisterController;
-  String? Function(BuildContext, String?)? nombreRegisterControllerValidator;
-  String? _nombreRegisterControllerValidator(
+  // State field(s) for nombre_registermobile widget.
+  TextEditingController? nombreRegistermobileController;
+  String? Function(BuildContext, String?)?
+      nombreRegistermobileControllerValidator;
+  String? _nombreRegistermobileControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Obligatorio';
@@ -105,10 +109,11 @@ class LoginPageModel extends FlutterFlowModel {
     return null;
   }
 
-  // State field(s) for telefono_register widget.
-  TextEditingController? telefonoRegisterController;
-  String? Function(BuildContext, String?)? telefonoRegisterControllerValidator;
-  String? _telefonoRegisterControllerValidator(
+  // State field(s) for telefono_registermobile widget.
+  TextEditingController? telefonoRegistermobileController;
+  String? Function(BuildContext, String?)?
+      telefonoRegistermobileControllerValidator;
+  String? _telefonoRegistermobileControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Obligatorio';
@@ -128,14 +133,18 @@ class LoginPageModel extends FlutterFlowModel {
     crearPassVisibility = false;
     crearPassConVisibility = false;
     passwordLoginMobileVisibility = false;
-    emailRegisterControllerValidator = _emailRegisterControllerValidator;
-    passwordLoginregisterVisibility = false;
-    passwordLoginregisterControllerValidator =
-        _passwordLoginregisterControllerValidator;
-    passwordConfirmVisibility = false;
-    passwordConfirmControllerValidator = _passwordConfirmControllerValidator;
-    nombreRegisterControllerValidator = _nombreRegisterControllerValidator;
-    telefonoRegisterControllerValidator = _telefonoRegisterControllerValidator;
+    emailRegistermobileControllerValidator =
+        _emailRegistermobileControllerValidator;
+    passwordLoginregistermobileVisibility = false;
+    passwordLoginregistermobileControllerValidator =
+        _passwordLoginregistermobileControllerValidator;
+    passwordConfirmMonbileVisibility = false;
+    passwordConfirmMonbileControllerValidator =
+        _passwordConfirmMonbileControllerValidator;
+    nombreRegistermobileControllerValidator =
+        _nombreRegistermobileControllerValidator;
+    telefonoRegistermobileControllerValidator =
+        _telefonoRegistermobileControllerValidator;
   }
 
   void dispose() {
@@ -149,11 +158,11 @@ class LoginPageModel extends FlutterFlowModel {
     crearTelController?.dispose();
     emailAddressLoginMobileController?.dispose();
     passwordLoginMobileController?.dispose();
-    emailRegisterController?.dispose();
-    passwordLoginregisterController?.dispose();
-    passwordConfirmController?.dispose();
-    nombreRegisterController?.dispose();
-    telefonoRegisterController?.dispose();
+    emailRegistermobileController?.dispose();
+    passwordLoginregistermobileController?.dispose();
+    passwordConfirmMonbileController?.dispose();
+    nombreRegistermobileController?.dispose();
+    telefonoRegistermobileController?.dispose();
   }
 
   /// Action blocks are added here.
