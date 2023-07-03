@@ -1,0 +1,104 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "envios",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "filtros",
+          "arrayConfig": "CONTAINS"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "transacciones",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "filtros",
+          "arrayConfig": "CONTAINS"
+        },
+        {
+          "fieldPath": "status",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "filtros",
+          "arrayConfig": "CONTAINS"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "precios",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "carrierUuid",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "lista",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "plataforma",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "pesoMin",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "precios",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "lista",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "carrierUuid",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "plataforma",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "pesoMin",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "transacciones",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "plataforma",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "filtros",
+          "arrayConfig": "CONTAINS"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "120922735917",
+    "project_id": "plataforma-7f84e",
+    "storage_bucket": "plataforma-7f84e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120922735917:android:cc7cf96fbe409b9537bfa4",
+        "android_client_info": {
+          "package_name": "com.appincode.whatsship"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "120922735917-u09p02f77vlnvv9ohlbfomo9d53is0mm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHoIpwR5Yrh1oNqhdiEAxw78-QKmaHit4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "120922735917-u09p02f77vlnvv9ohlbfomo9d53is0mm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "120922735917-921dh2t0g5ebc5e1f07ifhm76tcvvikv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.appincode.whatsship"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
