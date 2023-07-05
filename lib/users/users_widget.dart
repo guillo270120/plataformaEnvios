@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/components/acreditar_saldo_widget.dart';
 import '/components/asignarlista_widget.dart';
 import '/components/header_widget.dart';
 import '/components/side_menu_widget.dart';
@@ -8,6 +9,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/flutter_flow/random_data_util.dart' as random_data;
+import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -608,62 +611,379 @@ class _UsersWidgetState extends State<UsersWidget> {
                                                                 MainAxisSize
                                                                     .max,
                                                             children: [
-                                                              FlutterFlowIconButton(
-                                                                borderColor:
-                                                                    FlutterFlowTheme.of(
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            8.0,
+                                                                            0.0,
+                                                                            8.0,
+                                                                            0.0),
+                                                                child:
+                                                                    FlutterFlowIconButton(
+                                                                  borderColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                  borderRadius:
+                                                                      5.0,
+                                                                  borderWidth:
+                                                                      1.0,
+                                                                  buttonSize:
+                                                                      40.0,
+                                                                  icon: Icon(
+                                                                    Icons
+                                                                        .security,
+                                                                    color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primary,
-                                                                borderRadius:
-                                                                    5.0,
-                                                                borderWidth:
-                                                                    1.0,
-                                                                buttonSize:
-                                                                    40.0,
-                                                                icon: Icon(
-                                                                  Icons.check,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
-                                                                  size: 24.0,
-                                                                ),
-                                                                onPressed:
-                                                                    () async {
-                                                                  logFirebaseEvent(
-                                                                      'USERS_PAGE_check_ICN_ON_TAP');
-                                                                  logFirebaseEvent(
-                                                                      'IconButton_backend_call');
+                                                                    size: 24.0,
+                                                                  ),
+                                                                  onPressed:
+                                                                      () async {
+                                                                    logFirebaseEvent(
+                                                                        'USERS_PAGE_security_ICN_ON_TAP');
+                                                                    logFirebaseEvent(
+                                                                        'IconButton_backend_call');
 
-                                                                  await listViewUsersRecord
-                                                                      .reference
-                                                                      .update(
-                                                                          createUsersRecordData(
-                                                                    rol:
-                                                                        'admin',
-                                                                  ));
-                                                                  logFirebaseEvent(
-                                                                      'IconButton_alert_dialog');
-                                                                  await showDialog(
-                                                                    context:
-                                                                        context,
-                                                                    builder:
-                                                                        (alertDialogContext) {
-                                                                      return AlertDialog(
-                                                                        title: Text(
-                                                                            'Rol Actualizado'),
-                                                                        content:
-                                                                            Text('El usuario ${listViewUsersRecord.displayName}ahora es administador de ${listViewUsersRecord.plataforma}'),
-                                                                        actions: [
-                                                                          TextButton(
-                                                                            onPressed: () =>
-                                                                                Navigator.pop(alertDialogContext),
+                                                                    await listViewUsersRecord
+                                                                        .reference
+                                                                        .update(
+                                                                            createUsersRecordData(
+                                                                      rol:
+                                                                          'admin',
+                                                                    ));
+                                                                    logFirebaseEvent(
+                                                                        'IconButton_alert_dialog');
+                                                                    await showDialog(
+                                                                      context:
+                                                                          context,
+                                                                      builder:
+                                                                          (alertDialogContext) {
+                                                                        return AlertDialog(
+                                                                          title:
+                                                                              Text('Rol Actualizado'),
+                                                                          content:
+                                                                              Text('El usuario ${listViewUsersRecord.displayName}ahora es administador de ${listViewUsersRecord.plataforma}'),
+                                                                          actions: [
+                                                                            TextButton(
+                                                                              onPressed: () => Navigator.pop(alertDialogContext),
+                                                                              child: Text('Ok'),
+                                                                            ),
+                                                                          ],
+                                                                        );
+                                                                      },
+                                                                    );
+                                                                  },
+                                                                ),
+                                                              ),
+                                                              Builder(
+                                                                builder:
+                                                                    (context) =>
+                                                                        Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          8.0,
+                                                                          0.0,
+                                                                          8.0,
+                                                                          0.0),
+                                                                  child:
+                                                                      FlutterFlowIconButton(
+                                                                    borderColor:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primary,
+                                                                    borderRadius:
+                                                                        5.0,
+                                                                    borderWidth:
+                                                                        1.0,
+                                                                    buttonSize:
+                                                                        40.0,
+                                                                    icon: Icon(
+                                                                      Icons
+                                                                          .attach_money_sharp,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                      size:
+                                                                          24.0,
+                                                                    ),
+                                                                    onPressed:
+                                                                        () async {
+                                                                      logFirebaseEvent(
+                                                                          'USERS_PAGE_attach_money_sharp_ICN_ON_TAP');
+                                                                      logFirebaseEvent(
+                                                                          'IconButton_backend_call');
+
+                                                                      var transaccionesRecordReference = TransaccionesRecord
+                                                                          .collection
+                                                                          .doc();
+                                                                      await transaccionesRecordReference
+                                                                          .set({
+                                                                        ...createTransaccionesRecordData(
+                                                                          tipo:
+                                                                              'Aumento de Saldo',
+                                                                          fuente:
+                                                                              'Manual',
+                                                                          idTransaccion: random_data
+                                                                              .randomInteger(1111111111, 9999999999)
+                                                                              .toString(),
+                                                                          plataforma: valueOrDefault(
+                                                                              currentUserDocument?.plataforma,
+                                                                              ''),
+                                                                          status:
+                                                                              'pending',
+                                                                          user:
+                                                                              listViewUsersRecord.reference,
+                                                                          userId:
+                                                                              listViewUsersRecord.uid,
+                                                                          createdAt:
+                                                                              getCurrentTimestamp,
+                                                                          userRef:
+                                                                              listViewUsersRecord.reference,
+                                                                        ),
+                                                                        'filtros':
+                                                                            usersConfiguracionLocalRecord!.administradoresUuid,
+                                                                      });
+                                                                      _model.agregarSaldo =
+                                                                          TransaccionesRecord
+                                                                              .getDocumentFromData({
+                                                                        ...createTransaccionesRecordData(
+                                                                          tipo:
+                                                                              'Aumento de Saldo',
+                                                                          fuente:
+                                                                              'Manual',
+                                                                          idTransaccion: random_data
+                                                                              .randomInteger(1111111111, 9999999999)
+                                                                              .toString(),
+                                                                          plataforma: valueOrDefault(
+                                                                              currentUserDocument?.plataforma,
+                                                                              ''),
+                                                                          status:
+                                                                              'pending',
+                                                                          user:
+                                                                              listViewUsersRecord.reference,
+                                                                          userId:
+                                                                              listViewUsersRecord.uid,
+                                                                          createdAt:
+                                                                              getCurrentTimestamp,
+                                                                          userRef:
+                                                                              listViewUsersRecord.reference,
+                                                                        ),
+                                                                        'filtros':
+                                                                            usersConfiguracionLocalRecord!.administradoresUuid,
+                                                                      }, transaccionesRecordReference);
+                                                                      logFirebaseEvent(
+                                                                          'IconButton_alert_dialog');
+                                                                      await showAlignedDialog(
+                                                                        context:
+                                                                            context,
+                                                                        isGlobal:
+                                                                            true,
+                                                                        avoidOverflow:
+                                                                            false,
+                                                                        targetAnchor:
+                                                                            AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                        followerAnchor:
+                                                                            AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                        builder:
+                                                                            (dialogContext) {
+                                                                          return Material(
+                                                                            color:
+                                                                                Colors.transparent,
                                                                             child:
-                                                                                Text('Ok'),
-                                                                          ),
-                                                                        ],
+                                                                                GestureDetector(
+                                                                              onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+                                                                              child: AcreditarSaldoWidget(
+                                                                                transaccionDocument: _model.agregarSaldo!,
+                                                                              ),
+                                                                            ),
+                                                                          );
+                                                                        },
+                                                                      ).then((value) =>
+                                                                          setState(
+                                                                              () {}));
+
+                                                                      logFirebaseEvent(
+                                                                          'IconButton_alert_dialog');
+                                                                      await showDialog(
+                                                                        context:
+                                                                            context,
+                                                                        builder:
+                                                                            (alertDialogContext) {
+                                                                          return AlertDialog(
+                                                                            title:
+                                                                                Text('Saldo Actualizado'),
+                                                                            content:
+                                                                                Text('El saldo se  ha aplicado con exito'),
+                                                                            actions: [
+                                                                              TextButton(
+                                                                                onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                child: Text('Ok'),
+                                                                              ),
+                                                                            ],
+                                                                          );
+                                                                        },
                                                                       );
+
+                                                                      setState(
+                                                                          () {});
                                                                     },
-                                                                  );
-                                                                },
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                              Builder(
+                                                                builder:
+                                                                    (context) =>
+                                                                        Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          8.0,
+                                                                          0.0,
+                                                                          8.0,
+                                                                          0.0),
+                                                                  child:
+                                                                      FlutterFlowIconButton(
+                                                                    borderColor:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primary,
+                                                                    borderRadius:
+                                                                        5.0,
+                                                                    borderWidth:
+                                                                        1.0,
+                                                                    buttonSize:
+                                                                        40.0,
+                                                                    icon: Icon(
+                                                                      Icons
+                                                                          .money_off,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                      size:
+                                                                          24.0,
+                                                                    ),
+                                                                    onPressed:
+                                                                        () async {
+                                                                      logFirebaseEvent(
+                                                                          'USERS_PAGE_money_off_ICN_ON_TAP');
+                                                                      logFirebaseEvent(
+                                                                          'IconButton_backend_call');
+
+                                                                      var transaccionesRecordReference = TransaccionesRecord
+                                                                          .collection
+                                                                          .doc();
+                                                                      await transaccionesRecordReference
+                                                                          .set({
+                                                                        ...createTransaccionesRecordData(
+                                                                          tipo:
+                                                                              'Aumento de Saldo',
+                                                                          fuente:
+                                                                              'Manual',
+                                                                          idTransaccion: random_data
+                                                                              .randomInteger(1111111111, 9999999999)
+                                                                              .toString(),
+                                                                          plataforma: valueOrDefault(
+                                                                              currentUserDocument?.plataforma,
+                                                                              ''),
+                                                                          status:
+                                                                              'pending',
+                                                                          user:
+                                                                              listViewUsersRecord.reference,
+                                                                          userId:
+                                                                              listViewUsersRecord.uid,
+                                                                          createdAt:
+                                                                              getCurrentTimestamp,
+                                                                          userRef:
+                                                                              listViewUsersRecord.reference,
+                                                                        ),
+                                                                        'filtros':
+                                                                            usersConfiguracionLocalRecord!.administradoresUuid,
+                                                                      });
+                                                                      _model.agregarSaldoCopy =
+                                                                          TransaccionesRecord
+                                                                              .getDocumentFromData({
+                                                                        ...createTransaccionesRecordData(
+                                                                          tipo:
+                                                                              'Aumento de Saldo',
+                                                                          fuente:
+                                                                              'Manual',
+                                                                          idTransaccion: random_data
+                                                                              .randomInteger(1111111111, 9999999999)
+                                                                              .toString(),
+                                                                          plataforma: valueOrDefault(
+                                                                              currentUserDocument?.plataforma,
+                                                                              ''),
+                                                                          status:
+                                                                              'pending',
+                                                                          user:
+                                                                              listViewUsersRecord.reference,
+                                                                          userId:
+                                                                              listViewUsersRecord.uid,
+                                                                          createdAt:
+                                                                              getCurrentTimestamp,
+                                                                          userRef:
+                                                                              listViewUsersRecord.reference,
+                                                                        ),
+                                                                        'filtros':
+                                                                            usersConfiguracionLocalRecord!.administradoresUuid,
+                                                                      }, transaccionesRecordReference);
+                                                                      logFirebaseEvent(
+                                                                          'IconButton_alert_dialog');
+                                                                      await showAlignedDialog(
+                                                                        context:
+                                                                            context,
+                                                                        isGlobal:
+                                                                            true,
+                                                                        avoidOverflow:
+                                                                            false,
+                                                                        targetAnchor:
+                                                                            AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                        followerAnchor:
+                                                                            AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                        builder:
+                                                                            (dialogContext) {
+                                                                          return Material(
+                                                                            color:
+                                                                                Colors.transparent,
+                                                                            child:
+                                                                                GestureDetector(
+                                                                              onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+                                                                              child: AcreditarSaldoWidget(
+                                                                                transaccionDocument: _model.agregarSaldo!,
+                                                                              ),
+                                                                            ),
+                                                                          );
+                                                                        },
+                                                                      ).then((value) =>
+                                                                          setState(
+                                                                              () {}));
+
+                                                                      logFirebaseEvent(
+                                                                          'IconButton_alert_dialog');
+                                                                      await showDialog(
+                                                                        context:
+                                                                            context,
+                                                                        builder:
+                                                                            (alertDialogContext) {
+                                                                          return AlertDialog(
+                                                                            title:
+                                                                                Text('Saldo Actualizado'),
+                                                                            content:
+                                                                                Text('El saldo se  ha descontado con exito'),
+                                                                            actions: [
+                                                                              TextButton(
+                                                                                onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                child: Text('Ok'),
+                                                                              ),
+                                                                            ],
+                                                                          );
+                                                                        },
+                                                                      );
+
+                                                                      setState(
+                                                                          () {});
+                                                                    },
+                                                                  ),
+                                                                ),
                                                               ),
                                                             ],
                                                           ),

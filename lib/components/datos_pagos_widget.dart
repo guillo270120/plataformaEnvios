@@ -629,6 +629,30 @@ class _DatosPagosWidgetState extends State<DatosPagosWidget> {
                                           }
                                         }
 
+                                        if (!(_model.uploadedFileUrl != null &&
+                                            _model.uploadedFileUrl != '')) {
+                                          logFirebaseEvent(
+                                              'Button_alert_dialog');
+                                          await showDialog(
+                                            context: context,
+                                            builder: (alertDialogContext) {
+                                              return AlertDialog(
+                                                title: Text('Error '),
+                                                content: Text(
+                                                    'Debe de Subir la imagen de su pago'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext),
+                                                    child: Text('Ok'),
+                                                  ),
+                                                ],
+                                              );
+                                            },
+                                          );
+                                          return;
+                                        }
                                         logFirebaseEvent('Button_wait__delay');
                                         await Future.delayed(
                                             const Duration(milliseconds: 3000));

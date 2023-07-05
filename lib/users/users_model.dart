@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/components/acreditar_saldo_widget.dart';
 import '/components/asignarlista_widget.dart';
 import '/components/header_widget.dart';
 import '/components/side_menu_widget.dart';
@@ -8,6 +9,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/flutter_flow/random_data_util.dart' as random_data;
+import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -25,6 +28,10 @@ class UsersModel extends FlutterFlowModel {
   // State field(s) for TextField widget.
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
+  // Stores action output result for [Backend Call - Create Document] action in IconButton widget.
+  TransaccionesRecord? agregarSaldo;
+  // Stores action output result for [Backend Call - Create Document] action in IconButton widget.
+  TransaccionesRecord? agregarSaldoCopy;
 
   /// Initialization and disposal methods.
 
