@@ -255,7 +255,7 @@ class FFAppState extends ChangeNotifier {
     secureStorage.delete(key: 'ff_nombrePlataforma');
   }
 
-  String _version = '1.2.4';
+  String _version = '1.2.5';
   String get version => _version;
   set version(String _value) {
     _version = _value;

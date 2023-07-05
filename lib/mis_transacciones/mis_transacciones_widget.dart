@@ -424,17 +424,15 @@ class _MisTransaccionesWidgetState extends State<MisTransaccionesWidget> {
                                                                 MainAxisSize
                                                                     .max,
                                                             children: [
-                                                              if (!FFAppState()
-                                                                  .asignarlista)
-                                                                Expanded(
-                                                                  child: Text(
-                                                                    listViewTransaccionesRecord
-                                                                        .idTransaccion,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
-                                                                  ),
+                                                              Expanded(
+                                                                child: Text(
+                                                                  listViewTransaccionesRecord
+                                                                      .idTransaccion,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium,
                                                                 ),
+                                                              ),
                                                             ],
                                                           ),
                                                         ),
@@ -444,27 +442,25 @@ class _MisTransaccionesWidgetState extends State<MisTransaccionesWidget> {
                                                                 MainAxisSize
                                                                     .max,
                                                             children: [
-                                                              if (!FFAppState()
-                                                                  .asignarlista)
-                                                                Expanded(
-                                                                  child: Text(
-                                                                    formatNumber(
-                                                                      listViewTransaccionesRecord
-                                                                          .cantidad,
-                                                                      formatType:
-                                                                          FormatType
-                                                                              .decimal,
-                                                                      decimalType:
-                                                                          DecimalType
-                                                                              .automatic,
-                                                                      currency:
-                                                                          '\$ ',
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
+                                                              Expanded(
+                                                                child: Text(
+                                                                  formatNumber(
+                                                                    listViewTransaccionesRecord
+                                                                        .cantidad,
+                                                                    formatType:
+                                                                        FormatType
+                                                                            .decimal,
+                                                                    decimalType:
+                                                                        DecimalType
+                                                                            .automatic,
+                                                                    currency:
+                                                                        '\$ ',
                                                                   ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium,
                                                                 ),
+                                                              ),
                                                             ],
                                                           ),
                                                         ),
@@ -681,6 +677,74 @@ class _MisTransaccionesWidgetState extends State<MisTransaccionesWidget> {
                                                                             },
                                                                           ).then((value) =>
                                                                               setState(() {}));
+                                                                        } else {
+                                                                          return;
+                                                                        }
+                                                                      },
+                                                                    ),
+                                                                  ),
+                                                                if (listViewTransaccionesRecord
+                                                                        .status ==
+                                                                    'pending')
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            8.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                    child:
+                                                                        FlutterFlowIconButton(
+                                                                      borderColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .primary,
+                                                                      borderRadius:
+                                                                          5.0,
+                                                                      borderWidth:
+                                                                          1.0,
+                                                                      buttonSize:
+                                                                          40.0,
+                                                                      icon:
+                                                                          Icon(
+                                                                        Icons
+                                                                            .delete,
+                                                                        color: Color(
+                                                                            0xFFFF0A0A),
+                                                                        size:
+                                                                            24.0,
+                                                                      ),
+                                                                      onPressed:
+                                                                          () async {
+                                                                        logFirebaseEvent(
+                                                                            'MIS_TRANSACCIONES_PAGE_delete_ICN_ON_TAP');
+                                                                        logFirebaseEvent(
+                                                                            'IconButton_alert_dialog');
+                                                                        var confirmDialogResponse = await showDialog<bool>(
+                                                                              context: context,
+                                                                              builder: (alertDialogContext) {
+                                                                                return AlertDialog(
+                                                                                  title: Text('Eliminar Transaccion'),
+                                                                                  content: Text('Esta seguro deEliminar la transaccion'),
+                                                                                  actions: [
+                                                                                    TextButton(
+                                                                                      onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                      child: Text('Cancelar'),
+                                                                                    ),
+                                                                                    TextButton(
+                                                                                      onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                      child: Text('Confirmar'),
+                                                                                    ),
+                                                                                  ],
+                                                                                );
+                                                                              },
+                                                                            ) ??
+                                                                            false;
+                                                                        if (confirmDialogResponse) {
+                                                                          logFirebaseEvent(
+                                                                              'IconButton_backend_call');
+                                                                          await listViewTransaccionesRecord
+                                                                              .reference
+                                                                              .delete();
                                                                         } else {
                                                                           return;
                                                                         }
