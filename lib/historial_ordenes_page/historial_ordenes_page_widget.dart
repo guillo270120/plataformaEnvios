@@ -2006,6 +2006,7 @@ class _HistorialOrdenesPageWidgetState
                                                               padding:
                                                                   EdgeInsets
                                                                       .zero,
+                                                              primary: false,
                                                               shrinkWrap: true,
                                                               scrollDirection:
                                                                   Axis.vertical,
