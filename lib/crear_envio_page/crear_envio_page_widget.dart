@@ -4640,945 +4640,942 @@ class _CrearEnvioPageWidgetState extends State<CrearEnvioPageWidget> {
                                             ],
                                           ),
                                         ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 5.0, 0.0, 10.0),
-                                        child: Text(
-                                          'Crear envio',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Readex Pro',
-                                                fontSize: 16.0,
-                                                fontWeight: FontWeight.w600,
-                                              ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 5.0, 16.0, 5.0),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            logFirebaseEvent(
-                                                'CREAR_ENVIO_listContainer_ON_TAP');
-                                            logFirebaseEvent(
-                                                'listContainer_navigate_to');
-
-                                            context.pushNamed('origenMobile');
-                                          },
-                                          child: Container(
-                                            width: double.infinity,
-                                            constraints: BoxConstraints(
-                                              maxWidth: 570.0,
-                                            ),
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                              border: Border.all(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
-                                                width: 2.0,
-                                              ),
-                                            ),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      16.0, 12.0, 16.0, 12.0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  Expanded(
-                                                    child: Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  12.0,
-                                                                  0.0),
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .center,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Text(
-                                                            'Remitente',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Readex Pro',
-                                                                  fontSize:
-                                                                      16.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
-                                                                ),
-                                                          ),
-                                                          if (!FFAppState()
-                                                              .origenAgregado)
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  FaIcon(
-                                                                    FontAwesomeIcons
-                                                                        .addressBook,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                    size: 24.0,
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child: Text(
-                                                                      'Seleccionar/Ingresar Origen',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          if (FFAppState()
-                                                              .origenAgregado)
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    children: [
-                                                                      Icon(
-                                                                        Icons
-                                                                            .person,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primary,
-                                                                        size:
-                                                                            24.0,
-                                                                      ),
-                                                                      Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Text(
-                                                                          valueOrDefault<
-                                                                              String>(
-                                                                            FFAppState().origen.name,
-                                                                            'Sin Informacion',
-                                                                          ),
-                                                                          style:
-                                                                              FlutterFlowTheme.of(context).bodyMedium,
-                                                                        ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    children: [
-                                                                      FaIcon(
-                                                                        FontAwesomeIcons
-                                                                            .addressBook,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primary,
-                                                                        size:
-                                                                            24.0,
-                                                                      ),
-                                                                      Expanded(
-                                                                        child:
-                                                                            Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
-                                                                            '${valueOrDefault<String>(
-                                                                              FFAppState().origen.street,
-                                                                              'Sin Informacion',
-                                                                            )}, ${valueOrDefault<String>(
-                                                                              FFAppState().origen.neighborhood,
-                                                                              'Sin Informacion',
-                                                                            )}, ${valueOrDefault<String>(
-                                                                              FFAppState().origen.city,
-                                                                              'Sin Informacion',
-                                                                            )}, ${valueOrDefault<String>(
-                                                                              FFAppState().origen.state,
-                                                                              'Sin Informacion',
-                                                                            )}, ${valueOrDefault<String>(
-                                                                              FFAppState().origen.postalCode,
-                                                                              'Sin Informacion',
-                                                                            )}',
-                                                                            style:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Icon(
-                                                    Icons.chevron_right,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    size: 35.0,
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 5.0, 16.0, 5.0),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            logFirebaseEvent(
-                                                'CREAR_ENVIO_listContainer_ON_TAP');
-                                            logFirebaseEvent(
-                                                'listContainer_navigate_to');
-
-                                            context.pushNamed('destinoMobile');
-                                          },
-                                          child: Container(
-                                            width: double.infinity,
-                                            constraints: BoxConstraints(
-                                              maxWidth: 570.0,
-                                            ),
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                              border: Border.all(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
-                                                width: 2.0,
-                                              ),
-                                            ),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      16.0, 12.0, 16.0, 12.0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  Expanded(
-                                                    child: Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  12.0,
-                                                                  0.0),
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .center,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Text(
-                                                            'Destinatario',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Readex Pro',
-                                                                  fontSize:
-                                                                      16.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
-                                                                ),
-                                                          ),
-                                                          if (!FFAppState()
-                                                              .destinoAgregado)
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  FaIcon(
-                                                                    FontAwesomeIcons
-                                                                        .addressBook,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                    size: 24.0,
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child: Text(
-                                                                      'Seleccionar/Ingresar Destino',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          if (FFAppState()
-                                                              .destinoAgregado)
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    children: [
-                                                                      Icon(
-                                                                        Icons
-                                                                            .person,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primary,
-                                                                        size:
-                                                                            24.0,
-                                                                      ),
-                                                                      Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Text(
-                                                                          FFAppState()
-                                                                              .destino
-                                                                              .name,
-                                                                          style:
-                                                                              FlutterFlowTheme.of(context).bodyMedium,
-                                                                        ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    children: [
-                                                                      FaIcon(
-                                                                        FontAwesomeIcons
-                                                                            .addressBook,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primary,
-                                                                        size:
-                                                                            24.0,
-                                                                      ),
-                                                                      Expanded(
-                                                                        child:
-                                                                            Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
-                                                                            '${valueOrDefault<String>(
-                                                                              FFAppState().destino.street,
-                                                                              'Sin Informacion',
-                                                                            )}, ${valueOrDefault<String>(
-                                                                              FFAppState().destino.neighborhood,
-                                                                              'Sin Informacion',
-                                                                            )}, ${valueOrDefault<String>(
-                                                                              FFAppState().destino.city,
-                                                                              'Sin Informacion',
-                                                                            )}, ${valueOrDefault<String>(
-                                                                              FFAppState().destino.state,
-                                                                              'Sin Informacion',
-                                                                            )}, ${valueOrDefault<String>(
-                                                                              FFAppState().destino.postalCode,
-                                                                              'Sin Informacion',
-                                                                            )}',
-                                                                            style:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Icon(
-                                                    Icons.chevron_right,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    size: 35.0,
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 5.0, 16.0, 5.0),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            logFirebaseEvent(
-                                                'CREAR_ENVIO_listContainer_ON_TAP');
-                                            logFirebaseEvent(
-                                                'listContainer_navigate_to');
-
-                                            context.pushNamed('pesoMobile');
-                                          },
-                                          child: Container(
-                                            width: double.infinity,
-                                            constraints: BoxConstraints(
-                                              maxWidth: 570.0,
-                                            ),
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                              border: Border.all(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
-                                                width: 2.0,
-                                              ),
-                                            ),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      16.0, 12.0, 16.0, 12.0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  Expanded(
-                                                    child: Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  12.0,
-                                                                  0.0),
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .center,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Text(
-                                                            'Paquete',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Readex Pro',
-                                                                  fontSize:
-                                                                      16.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
-                                                                ),
-                                                          ),
-                                                          if (!FFAppState()
-                                                              .destinoAgregado)
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  FaIcon(
-                                                                    FontAwesomeIcons
-                                                                        .addressBook,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                    size: 24.0,
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child: Text(
-                                                                      'Seleccionar/Ingresar Paquete',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          if (FFAppState()
-                                                              .destinoAgregado)
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    children: [
-                                                                      Icon(
-                                                                        Icons
-                                                                            .expand_sharp,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primary,
-                                                                        size:
-                                                                            24.0,
-                                                                      ),
-                                                                      Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Text(
-                                                                          '${valueOrDefault<String>(
-                                                                            FFAppState().paquete.length.toString(),
-                                                                            'Sin informacion',
-                                                                          )}cm X ${valueOrDefault<String>(
-                                                                            FFAppState().paquete.width.toString(),
-                                                                            'Sin informacion',
-                                                                          )}cm X ${valueOrDefault<String>(
-                                                                            FFAppState().paquete.height.toString(),
-                                                                            'Sin informacion',
-                                                                          )}cm',
-                                                                          style:
-                                                                              FlutterFlowTheme.of(context).bodyMedium,
-                                                                        ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    children: [
-                                                                      FaIcon(
-                                                                        FontAwesomeIcons
-                                                                            .weightHanging,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primary,
-                                                                        size:
-                                                                            24.0,
-                                                                      ),
-                                                                      Expanded(
-                                                                        child:
-                                                                            Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
-                                                                            '${valueOrDefault<String>(
-                                                                              FFAppState().paquete.weight.toString(),
-                                                                              'Sin Informacion',
-                                                                            )} Kg.',
-                                                                            style:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    children: [
-                                                                      Icon(
-                                                                        Icons
-                                                                            .content_paste_search_outlined,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primary,
-                                                                        size:
-                                                                            24.0,
-                                                                      ),
-                                                                      Expanded(
-                                                                        child:
-                                                                            Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
-                                                                            valueOrDefault<String>(
-                                                                              FFAppState().paquete.contents,
-                                                                              'Sin Informacion',
-                                                                            ),
-                                                                            style:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Icon(
-                                                    Icons.chevron_right,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    size: 35.0,
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      if (FFAppState().origenAgregado &&
-                                          FFAppState().destinoAgregado &&
-                                          FFAppState().paqueteAgregado)
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  20.0, 20.0, 20.0, 20.0),
-                                          child: Row(
+                                      Expanded(
+                                        child: SingleChildScrollView(
+                                          child: Column(
                                             mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
                                             children: [
-                                              FFButtonWidget(
-                                                onPressed: () async {
-                                                  logFirebaseEvent(
-                                                      'CREAR_ENVIO_ButtonnextMobile_ON_TAP');
-                                                  logFirebaseEvent(
-                                                      'ButtonnextMobile_backend_call');
-
-                                                  var enviosRecordReference =
-                                                      EnviosRecord.collection
-                                                          .doc();
-                                                  await enviosRecordReference
-                                                      .set({
-                                                    ...createEnviosRecordData(
-                                                      origen:
-                                                          updateOriginAttributesStruct(
-                                                        FFAppState().origen,
-                                                        clearUnsetFields: false,
-                                                        create: true,
-                                                      ),
-                                                      destino:
-                                                          updateDestinationAttributesStruct(
-                                                        FFAppState().destino,
-                                                        clearUnsetFields: false,
-                                                        create: true,
-                                                      ),
-                                                      status: 'pending',
-                                                      userId: currentUserUid,
-                                                      step: 'tarifa',
-                                                      createdAt:
-                                                          getCurrentTimestamp,
-                                                      plataforma: valueOrDefault(
-                                                          currentUserDocument
-                                                              ?.plataforma,
-                                                          ''),
-                                                      paquete:
-                                                          updateParcelStruct(
-                                                        FFAppState().paquete,
-                                                        clearUnsetFields: false,
-                                                        create: true,
-                                                      ),
-                                                      cantidad: 1,
-                                                    ),
-                                                    'filtros':
-                                                        rowConfiguracionLocalRecord!
-                                                            .administradoresUuid,
-                                                  });
-                                                  _model.currentShipMObile =
-                                                      EnviosRecord
-                                                          .getDocumentFromData({
-                                                    ...createEnviosRecordData(
-                                                      origen:
-                                                          updateOriginAttributesStruct(
-                                                        FFAppState().origen,
-                                                        clearUnsetFields: false,
-                                                        create: true,
-                                                      ),
-                                                      destino:
-                                                          updateDestinationAttributesStruct(
-                                                        FFAppState().destino,
-                                                        clearUnsetFields: false,
-                                                        create: true,
-                                                      ),
-                                                      status: 'pending',
-                                                      userId: currentUserUid,
-                                                      step: 'tarifa',
-                                                      createdAt:
-                                                          getCurrentTimestamp,
-                                                      plataforma: valueOrDefault(
-                                                          currentUserDocument
-                                                              ?.plataforma,
-                                                          ''),
-                                                      paquete:
-                                                          updateParcelStruct(
-                                                        FFAppState().paquete,
-                                                        clearUnsetFields: false,
-                                                        create: true,
-                                                      ),
-                                                      cantidad: 1,
-                                                    ),
-                                                    'filtros':
-                                                        rowConfiguracionLocalRecord!
-                                                            .administradoresUuid,
-                                                  }, enviosRecordReference);
-                                                  logFirebaseEvent(
-                                                      'ButtonnextMobile_update_app_state');
-                                                  setState(() {
-                                                    FFAppState().deleteOrigen();
-                                                    FFAppState().origen =
-                                                        OriginAttributesStruct();
-
-                                                    FFAppState()
-                                                        .deleteDestino();
-                                                    FFAppState().destino =
-                                                        DestinationAttributesStruct();
-
-                                                    FFAppState()
-                                                        .deletePaquete();
-                                                    FFAppState().paquete =
-                                                        ParcelStruct();
-
-                                                    FFAppState()
-                                                        .origenAgregado = false;
-                                                    FFAppState()
-                                                            .destinoAgregado =
-                                                        false;
-                                                    FFAppState()
-                                                            .paqueteAgregado =
-                                                        false;
-                                                  });
-                                                  logFirebaseEvent(
-                                                      'ButtonnextMobile_navigate_to');
-
-                                                  context.pushNamed(
-                                                    'tarifaPage',
-                                                    queryParameters: {
-                                                      'currentship':
-                                                          serializeParam(
-                                                        _model
-                                                            .currentShipMObile,
-                                                        ParamType.Document,
-                                                      ),
-                                                    }.withoutNulls,
-                                                    extra: <String, dynamic>{
-                                                      'currentship': _model
-                                                          .currentShipMObile,
-                                                    },
-                                                  );
-
-                                                  setState(() {});
-                                                },
-                                                text: 'Siguiente',
-                                                options: FFButtonOptions(
-                                                  width: 300.0,
-                                                  height: 40.0,
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 0.0),
-                                                  iconPadding:
-                                                      EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: FlutterFlowTheme.of(
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 5.0, 0.0, 10.0),
+                                                child: Text(
+                                                  'Crear envio',
+                                                  style: FlutterFlowTheme.of(
                                                           context)
-                                                      .primary,
-                                                  textStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .override(
-                                                            fontFamily:
-                                                                'Readex Pro',
-                                                            color: Colors.white,
-                                                          ),
-                                                  elevation: 3.0,
-                                                  borderSide: BorderSide(
-                                                    color: Colors.transparent,
-                                                    width: 1.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        fontSize: 16.0,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                      ),
                                                 ),
                                               ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 5.0, 16.0, 5.0),
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    logFirebaseEvent(
+                                                        'CREAR_ENVIO_listContainer_ON_TAP');
+                                                    logFirebaseEvent(
+                                                        'listContainer_navigate_to');
+
+                                                    context.pushNamed(
+                                                        'origenMobile');
+                                                  },
+                                                  child: Container(
+                                                    width: double.infinity,
+                                                    constraints: BoxConstraints(
+                                                      maxWidth: 570.0,
+                                                    ),
+                                                    decoration: BoxDecoration(
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                      border: Border.all(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .alternate,
+                                                        width: 2.0,
+                                                      ),
+                                                    ),
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  12.0,
+                                                                  16.0,
+                                                                  12.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceBetween,
+                                                        children: [
+                                                          Expanded(
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          12.0,
+                                                                          0.0),
+                                                              child: Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .center,
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .start,
+                                                                children: [
+                                                                  Text(
+                                                                    'Remitente',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Readex Pro',
+                                                                          fontSize:
+                                                                              16.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
+                                                                        ),
+                                                                  ),
+                                                                  if (!FFAppState()
+                                                                      .origenAgregado)
+                                                                    Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          Row(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        children: [
+                                                                          FaIcon(
+                                                                            FontAwesomeIcons.addressBook,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                            size:
+                                                                                24.0,
+                                                                          ),
+                                                                          Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                5.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            child:
+                                                                                Text(
+                                                                              'Seleccionar/Ingresar Origen',
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                            ),
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                    ),
+                                                                  if (FFAppState()
+                                                                      .origenAgregado)
+                                                                    Column(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      children: [
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              5.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              Icon(
+                                                                                Icons.person,
+                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                size: 24.0,
+                                                                              ),
+                                                                              Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                child: Text(
+                                                                                  valueOrDefault<String>(
+                                                                                    FFAppState().origen.name,
+                                                                                    'Sin Informacion',
+                                                                                  ),
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              5.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              FaIcon(
+                                                                                FontAwesomeIcons.addressBook,
+                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                size: 24.0,
+                                                                              ),
+                                                                              Expanded(
+                                                                                child: Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                  child: Text(
+                                                                                    '${valueOrDefault<String>(
+                                                                                      FFAppState().origen.street,
+                                                                                      'Sin Informacion',
+                                                                                    )}, ${valueOrDefault<String>(
+                                                                                      FFAppState().origen.neighborhood,
+                                                                                      'Sin Informacion',
+                                                                                    )}, ${valueOrDefault<String>(
+                                                                                      FFAppState().origen.city,
+                                                                                      'Sin Informacion',
+                                                                                    )}, ${valueOrDefault<String>(
+                                                                                      FFAppState().origen.state,
+                                                                                      'Sin Informacion',
+                                                                                    )}, ${valueOrDefault<String>(
+                                                                                      FFAppState().origen.postalCode,
+                                                                                      'Sin Informacion',
+                                                                                    )}',
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          Icon(
+                                                            Icons.chevron_right,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            size: 35.0,
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 5.0, 16.0, 5.0),
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    logFirebaseEvent(
+                                                        'CREAR_ENVIO_listContainer_ON_TAP');
+                                                    logFirebaseEvent(
+                                                        'listContainer_navigate_to');
+
+                                                    context.pushNamed(
+                                                        'destinoMobile');
+                                                  },
+                                                  child: Container(
+                                                    width: double.infinity,
+                                                    constraints: BoxConstraints(
+                                                      maxWidth: 570.0,
+                                                    ),
+                                                    decoration: BoxDecoration(
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                      border: Border.all(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .alternate,
+                                                        width: 2.0,
+                                                      ),
+                                                    ),
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  12.0,
+                                                                  16.0,
+                                                                  12.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceBetween,
+                                                        children: [
+                                                          Expanded(
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          12.0,
+                                                                          0.0),
+                                                              child: Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .center,
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .start,
+                                                                children: [
+                                                                  Text(
+                                                                    'Destinatario',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Readex Pro',
+                                                                          fontSize:
+                                                                              16.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
+                                                                        ),
+                                                                  ),
+                                                                  if (!FFAppState()
+                                                                      .destinoAgregado)
+                                                                    Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          Row(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        children: [
+                                                                          FaIcon(
+                                                                            FontAwesomeIcons.addressBook,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                            size:
+                                                                                24.0,
+                                                                          ),
+                                                                          Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                5.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            child:
+                                                                                Text(
+                                                                              'Seleccionar/Ingresar Destino',
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                            ),
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                    ),
+                                                                  if (FFAppState()
+                                                                      .destinoAgregado)
+                                                                    Column(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      children: [
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              5.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              Icon(
+                                                                                Icons.person,
+                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                size: 24.0,
+                                                                              ),
+                                                                              Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                child: Text(
+                                                                                  FFAppState().destino.name,
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              5.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              FaIcon(
+                                                                                FontAwesomeIcons.addressBook,
+                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                size: 24.0,
+                                                                              ),
+                                                                              Expanded(
+                                                                                child: Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                  child: Text(
+                                                                                    '${valueOrDefault<String>(
+                                                                                      FFAppState().destino.street,
+                                                                                      'Sin Informacion',
+                                                                                    )}, ${valueOrDefault<String>(
+                                                                                      FFAppState().destino.neighborhood,
+                                                                                      'Sin Informacion',
+                                                                                    )}, ${valueOrDefault<String>(
+                                                                                      FFAppState().destino.city,
+                                                                                      'Sin Informacion',
+                                                                                    )}, ${valueOrDefault<String>(
+                                                                                      FFAppState().destino.state,
+                                                                                      'Sin Informacion',
+                                                                                    )}, ${valueOrDefault<String>(
+                                                                                      FFAppState().destino.postalCode,
+                                                                                      'Sin Informacion',
+                                                                                    )}',
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          Icon(
+                                                            Icons.chevron_right,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            size: 35.0,
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 5.0, 16.0, 5.0),
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    logFirebaseEvent(
+                                                        'CREAR_ENVIO_listContainer_ON_TAP');
+                                                    logFirebaseEvent(
+                                                        'listContainer_navigate_to');
+
+                                                    context.pushNamed(
+                                                        'pesoMobile');
+                                                  },
+                                                  child: Container(
+                                                    width: double.infinity,
+                                                    constraints: BoxConstraints(
+                                                      maxWidth: 570.0,
+                                                    ),
+                                                    decoration: BoxDecoration(
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                      border: Border.all(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .alternate,
+                                                        width: 2.0,
+                                                      ),
+                                                    ),
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  12.0,
+                                                                  16.0,
+                                                                  12.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceBetween,
+                                                        children: [
+                                                          Expanded(
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          12.0,
+                                                                          0.0),
+                                                              child: Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .center,
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .start,
+                                                                children: [
+                                                                  Text(
+                                                                    'Paquete',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Readex Pro',
+                                                                          fontSize:
+                                                                              16.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w600,
+                                                                        ),
+                                                                  ),
+                                                                  if (!FFAppState()
+                                                                      .destinoAgregado)
+                                                                    Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          Row(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        children: [
+                                                                          FaIcon(
+                                                                            FontAwesomeIcons.addressBook,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                            size:
+                                                                                24.0,
+                                                                          ),
+                                                                          Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                5.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            child:
+                                                                                Text(
+                                                                              'Seleccionar/Ingresar Paquete',
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                            ),
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                    ),
+                                                                  if (FFAppState()
+                                                                      .destinoAgregado)
+                                                                    Column(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      children: [
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              5.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              Icon(
+                                                                                Icons.expand_sharp,
+                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                size: 24.0,
+                                                                              ),
+                                                                              Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                child: Text(
+                                                                                  '${valueOrDefault<String>(
+                                                                                    FFAppState().paquete.length.toString(),
+                                                                                    'Sin informacion',
+                                                                                  )}cm X ${valueOrDefault<String>(
+                                                                                    FFAppState().paquete.width.toString(),
+                                                                                    'Sin informacion',
+                                                                                  )}cm X ${valueOrDefault<String>(
+                                                                                    FFAppState().paquete.height.toString(),
+                                                                                    'Sin informacion',
+                                                                                  )}cm',
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              5.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              FaIcon(
+                                                                                FontAwesomeIcons.weightHanging,
+                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                size: 24.0,
+                                                                              ),
+                                                                              Expanded(
+                                                                                child: Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                  child: Text(
+                                                                                    '${valueOrDefault<String>(
+                                                                                      FFAppState().paquete.weight.toString(),
+                                                                                      'Sin Informacion',
+                                                                                    )} Kg.',
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              5.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              Icon(
+                                                                                Icons.content_paste_search_outlined,
+                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                size: 24.0,
+                                                                              ),
+                                                                              Expanded(
+                                                                                child: Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                  child: Text(
+                                                                                    valueOrDefault<String>(
+                                                                                      FFAppState().paquete.contents,
+                                                                                      'Sin Informacion',
+                                                                                    ),
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          Icon(
+                                                            Icons.chevron_right,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            size: 35.0,
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              if (FFAppState().origenAgregado &&
+                                                  FFAppState()
+                                                      .destinoAgregado &&
+                                                  FFAppState().paqueteAgregado)
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(20.0, 20.0,
+                                                          20.0, 20.0),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      FFButtonWidget(
+                                                        onPressed: () async {
+                                                          logFirebaseEvent(
+                                                              'CREAR_ENVIO_ButtonnextMobile_ON_TAP');
+                                                          logFirebaseEvent(
+                                                              'ButtonnextMobile_backend_call');
+
+                                                          var enviosRecordReference =
+                                                              EnviosRecord
+                                                                  .collection
+                                                                  .doc();
+                                                          await enviosRecordReference
+                                                              .set({
+                                                            ...createEnviosRecordData(
+                                                              origen:
+                                                                  updateOriginAttributesStruct(
+                                                                FFAppState()
+                                                                    .origen,
+                                                                clearUnsetFields:
+                                                                    false,
+                                                                create: true,
+                                                              ),
+                                                              destino:
+                                                                  updateDestinationAttributesStruct(
+                                                                FFAppState()
+                                                                    .destino,
+                                                                clearUnsetFields:
+                                                                    false,
+                                                                create: true,
+                                                              ),
+                                                              status: 'pending',
+                                                              userId:
+                                                                  currentUserUid,
+                                                              step: 'tarifa',
+                                                              createdAt:
+                                                                  getCurrentTimestamp,
+                                                              plataforma: valueOrDefault(
+                                                                  currentUserDocument
+                                                                      ?.plataforma,
+                                                                  ''),
+                                                              paquete:
+                                                                  updateParcelStruct(
+                                                                FFAppState()
+                                                                    .paquete,
+                                                                clearUnsetFields:
+                                                                    false,
+                                                                create: true,
+                                                              ),
+                                                              cantidad: 1,
+                                                            ),
+                                                            'filtros':
+                                                                rowConfiguracionLocalRecord!
+                                                                    .administradoresUuid,
+                                                          });
+                                                          _model.currentShipMObile =
+                                                              EnviosRecord
+                                                                  .getDocumentFromData({
+                                                            ...createEnviosRecordData(
+                                                              origen:
+                                                                  updateOriginAttributesStruct(
+                                                                FFAppState()
+                                                                    .origen,
+                                                                clearUnsetFields:
+                                                                    false,
+                                                                create: true,
+                                                              ),
+                                                              destino:
+                                                                  updateDestinationAttributesStruct(
+                                                                FFAppState()
+                                                                    .destino,
+                                                                clearUnsetFields:
+                                                                    false,
+                                                                create: true,
+                                                              ),
+                                                              status: 'pending',
+                                                              userId:
+                                                                  currentUserUid,
+                                                              step: 'tarifa',
+                                                              createdAt:
+                                                                  getCurrentTimestamp,
+                                                              plataforma: valueOrDefault(
+                                                                  currentUserDocument
+                                                                      ?.plataforma,
+                                                                  ''),
+                                                              paquete:
+                                                                  updateParcelStruct(
+                                                                FFAppState()
+                                                                    .paquete,
+                                                                clearUnsetFields:
+                                                                    false,
+                                                                create: true,
+                                                              ),
+                                                              cantidad: 1,
+                                                            ),
+                                                            'filtros':
+                                                                rowConfiguracionLocalRecord!
+                                                                    .administradoresUuid,
+                                                          }, enviosRecordReference);
+                                                          logFirebaseEvent(
+                                                              'ButtonnextMobile_update_app_state');
+                                                          setState(() {
+                                                            FFAppState()
+                                                                .deleteOrigen();
+                                                            FFAppState()
+                                                                    .origen =
+                                                                OriginAttributesStruct();
+
+                                                            FFAppState()
+                                                                .deleteDestino();
+                                                            FFAppState()
+                                                                    .destino =
+                                                                DestinationAttributesStruct();
+
+                                                            FFAppState()
+                                                                .deletePaquete();
+                                                            FFAppState()
+                                                                    .paquete =
+                                                                ParcelStruct();
+
+                                                            FFAppState()
+                                                                    .origenAgregado =
+                                                                false;
+                                                            FFAppState()
+                                                                    .destinoAgregado =
+                                                                false;
+                                                            FFAppState()
+                                                                    .paqueteAgregado =
+                                                                false;
+                                                          });
+                                                          logFirebaseEvent(
+                                                              'ButtonnextMobile_navigate_to');
+
+                                                          context.pushNamed(
+                                                            'tarifaPage',
+                                                            queryParameters: {
+                                                              'currentship':
+                                                                  serializeParam(
+                                                                _model
+                                                                    .currentShipMObile,
+                                                                ParamType
+                                                                    .Document,
+                                                              ),
+                                                            }.withoutNulls,
+                                                            extra: <String,
+                                                                dynamic>{
+                                                              'currentship': _model
+                                                                  .currentShipMObile,
+                                                            },
+                                                          );
+
+                                                          setState(() {});
+                                                        },
+                                                        text: 'Siguiente',
+                                                        options:
+                                                            FFButtonOptions(
+                                                          width: 300.0,
+                                                          height: 40.0,
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          iconPadding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Readex Pro',
+                                                                    color: Colors
+                                                                        .white,
+                                                                  ),
+                                                          elevation: 3.0,
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Colors
+                                                                .transparent,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
                                             ],
                                           ),
                                         ),
+                                      ),
                                     ],
                                   ),
                                 ),
