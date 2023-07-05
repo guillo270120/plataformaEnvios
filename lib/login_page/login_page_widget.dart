@@ -1755,7 +1755,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                   obscureText: !_model
                                                       .passwordConfirmMonbileVisibility,
                                                   decoration: InputDecoration(
-                                                    labelText: 'Password',
+                                                    labelText:
+                                                        'Confirmar Password',
                                                     labelStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .bodyMedium
@@ -2089,7 +2090,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                     GoRouter.of(context)
                                                         .prepareAuthEvent();
                                                     if (_model
-                                                            .passwordLoginMobileController
+                                                            .passwordLoginregistermobileController
                                                             .text !=
                                                         _model
                                                             .passwordConfirmMonbileController
@@ -2113,7 +2114,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                           .emailRegistermobileController
                                                           .text,
                                                       _model
-                                                          .passwordLoginMobileController
+                                                          .passwordLoginregistermobileController
                                                           .text,
                                                     );
                                                     if (user == null) {
