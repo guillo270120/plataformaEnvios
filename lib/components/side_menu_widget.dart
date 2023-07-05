@@ -255,7 +255,8 @@ class _SideMenuWidgetState extends State<SideMenuWidget> {
                                                 'SIDE_MENU_COMP_Row_4wratbh8_ON_TAP');
                                             logFirebaseEvent('Row_navigate_to');
 
-                                            context.pushNamed('ordenesPage');
+                                            context.pushNamed(
+                                                'historialOrdenesPage');
                                           },
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,

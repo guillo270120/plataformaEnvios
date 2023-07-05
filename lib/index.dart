@@ -17,7 +17,8 @@ export '/crear_paquete_page/crear_paquete_page_widget.dart'
     show CrearPaquetePageWidget;
 export '/cuenta_creada_page/cuenta_creada_page_widget.dart'
     show CuentaCreadaPageWidget;
-export '/ordenes_page/ordenes_page_widget.dart' show OrdenesPageWidget;
+export '/historial_ordenes_page/historial_ordenes_page_widget.dart'
+    show HistorialOrdenesPageWidget;
 export '/carriers/carriers_widget.dart' show CarriersWidget;
 export '/generar_guia/generar_guia_widget.dart' show GenerarGuiaWidget;
 export '/users/users_widget.dart' show UsersWidget;
@@ -27,3 +28,9 @@ export '/configuracion_plataforma/configuracion_plataforma_widget.dart'
     show ConfiguracionPlataformaWidget;
 export '/configuracion_main/configuracion_main_widget.dart'
     show ConfiguracionMainWidget;
+export '/list10_order_history/list10_order_history_widget.dart'
+    show List10OrderHistoryWidget;
+export '/origen_mobile/origen_mobile_widget.dart' show OrigenMobileWidget;
+export '/descarga_guia/descarga_guia_widget.dart' show DescargaGuiaWidget;
+export '/destino_mobile/destino_mobile_widget.dart' show DestinoMobileWidget;
+export '/peso_mobile/peso_mobile_widget.dart' show PesoMobileWidget;

@@ -163,10 +163,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => CuentaCreadaPageWidget(),
         ),
         FFRoute(
-          name: 'ordenesPage',
-          path: '/ordenesPage',
+          name: 'historialOrdenesPage',
+          path: '/historialOrdenesPage',
           requireAuth: true,
-          builder: (context, params) => OrdenesPageWidget(),
+          builder: (context, params) => HistorialOrdenesPageWidget(),
         ),
         FFRoute(
           name: 'carriers',
@@ -206,6 +206,33 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/configuracionMain',
           requireAuth: true,
           builder: (context, params) => ConfiguracionMainWidget(),
+        ),
+        FFRoute(
+          name: 'List10OrderHistory',
+          path: '/list10OrderHistory',
+          builder: (context, params) => List10OrderHistoryWidget(),
+        ),
+        FFRoute(
+          name: 'origenMobile',
+          path: '/origenMobile',
+          builder: (context, params) => OrigenMobileWidget(),
+        ),
+        FFRoute(
+          name: 'descargaGuia',
+          path: '/descargaGuia',
+          builder: (context, params) => DescargaGuiaWidget(
+            guia: params.getParam('guia', ParamType.String),
+          ),
+        ),
+        FFRoute(
+          name: 'destinoMobile',
+          path: '/destinoMobile',
+          builder: (context, params) => DestinoMobileWidget(),
+        ),
+        FFRoute(
+          name: 'pesoMobile',
+          path: '/pesoMobile',
+          builder: (context, params) => PesoMobileWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -105,13 +105,15 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                       : null;
               return Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
-                height: MediaQuery.sizeOf(context).height * 1.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                   image: DecorationImage(
                     fit: BoxFit.cover,
                     image: Image.network(
-                      containerConfiguracionLocalRecord!.fondoInicioSesion,
+                      valueOrDefault<String>(
+                        containerConfiguracionLocalRecord!.fondoInicioSesion,
+                        'https://www.shutterstock.com/image-photo/smart-logistics-transportation-handshake-successful-260nw-2010205145.jpg',
+                      ),
                     ).image,
                   ),
                 ),

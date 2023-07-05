@@ -5,8 +5,8 @@ import '../base_auth_user_provider.dart';
 
 export '../base_auth_user_provider.dart';
 
-class WhatsShipFirebaseUser extends BaseAuthUser {
-  WhatsShipFirebaseUser(this.user);
+class PlataformaEnviosFirebaseUser extends BaseAuthUser {
+  PlataformaEnviosFirebaseUser(this.user);
   User? user;
   bool get loggedIn => user != null;
 
@@ -45,17 +45,18 @@ class WhatsShipFirebaseUser extends BaseAuthUser {
   static BaseAuthUser fromUserCredential(UserCredential userCredential) =>
       fromFirebaseUser(userCredential.user);
   static BaseAuthUser fromFirebaseUser(User? user) =>
-      WhatsShipFirebaseUser(user);
+      PlataformaEnviosFirebaseUser(user);
 }
 
-Stream<BaseAuthUser> whatsShipFirebaseUserStream() => FirebaseAuth.instance
+Stream<BaseAuthUser> plataformaEnviosFirebaseUserStream() =>
+    FirebaseAuth.instance
         .authStateChanges()
         .debounce((user) => user == null && !loggedIn
             ? TimerStream(true, const Duration(seconds: 1))
             : Stream.value(user))
         .map<BaseAuthUser>(
       (user) {
-        currentUser = WhatsShipFirebaseUser(user);
+        currentUser = PlataformaEnviosFirebaseUser(user);
         return currentUser!;
       },
     );

@@ -1,15 +1,21 @@
 import '/alert_confirmaciones/loader_generar_guia/loader_generar_guia_widget.dart';
+import '/alert_confirmaciones/loader_generar_guia_mobile/loader_generar_guia_mobile_widget.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
+import '/components/datos_pagos_mobile_widget.dart';
 import '/components/header_widget.dart';
 import '/components/side_menu_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:badges/badges.dart' as badges;
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:expandable/expandable.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -29,6 +35,14 @@ class TarifaPageModel extends FlutterFlowModel {
   ApiCallResponse? parcelResponse;
   // Stores action output result for [Backend Call - API (confirmar Tarifa)] action in Button widget.
   ApiCallResponse? confirmRateresponse;
+  // Stores action output result for [Backend Call - API (login)] action in Button widget.
+  ApiCallResponse? loginResponseCopy;
+  // Stores action output result for [Backend Call - API (shipments)] action in Button widget.
+  ApiCallResponse? shipmentresponseCopy;
+  // Stores action output result for [Backend Call - API (parcel)] action in Button widget.
+  ApiCallResponse? parcelResponseCopy;
+  // Stores action output result for [Backend Call - API (confirmar Tarifa)] action in Button widget.
+  ApiCallResponse? confirmRateresponseCopy;
 
   /// Initialization and disposal methods.
 

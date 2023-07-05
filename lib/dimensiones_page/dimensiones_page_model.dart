@@ -95,9 +95,6 @@ class DimensionesPageModel extends FlutterFlowModel {
     return null;
   }
 
-  // State field(s) for cantidad widget.
-  TextEditingController? cantidadController;
-  String? Function(BuildContext, String?)? cantidadControllerValidator;
   // State field(s) for contenido widget.
   TextEditingController? contenidoController;
   String? Function(BuildContext, String?)? contenidoControllerValidator;
@@ -136,7 +133,6 @@ class DimensionesPageModel extends FlutterFlowModel {
     anchoController?.dispose();
     altoController?.dispose();
     pesoController?.dispose();
-    cantidadController?.dispose();
     contenidoController?.dispose();
   }
 

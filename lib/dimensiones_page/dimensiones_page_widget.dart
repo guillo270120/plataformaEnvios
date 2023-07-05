@@ -56,7 +56,6 @@ class _DimensionesPageWidgetState extends State<DimensionesPageWidget> {
     _model.anchoController ??= TextEditingController();
     _model.altoController ??= TextEditingController();
     _model.pesoController ??= TextEditingController();
-    _model.cantidadController ??= TextEditingController(text: '1');
     _model.contenidoController ??= TextEditingController();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -843,88 +842,6 @@ class _DimensionesPageWidgetState extends State<DimensionesPageWidget> {
                                                                         .pesoControllerValidator
                                                                         .asValidator(
                                                                             context),
-                                                                  ),
-                                                                ),
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .center,
-                                                                    children: [
-                                                                      Expanded(
-                                                                        child:
-                                                                            Text(
-                                                                          'Cantidad de paquetes',
-                                                                          style:
-                                                                              FlutterFlowTheme.of(context).bodyMedium,
-                                                                        ),
-                                                                      ),
-                                                                      Flexible(
-                                                                        child:
-                                                                            Align(
-                                                                          alignment: AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                100.0,
-                                                                                10.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                TextFormField(
-                                                                              controller: _model.cantidadController,
-                                                                              autofocus: true,
-                                                                              obscureText: false,
-                                                                              decoration: InputDecoration(
-                                                                                labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                                                                                hintStyle: FlutterFlowTheme.of(context).labelMedium,
-                                                                                enabledBorder: OutlineInputBorder(
-                                                                                  borderSide: BorderSide(
-                                                                                    color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                    width: 1.0,
-                                                                                  ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
-                                                                                ),
-                                                                                focusedBorder: OutlineInputBorder(
-                                                                                  borderSide: BorderSide(
-                                                                                    color: FlutterFlowTheme.of(context).primary,
-                                                                                    width: 1.0,
-                                                                                  ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
-                                                                                ),
-                                                                                errorBorder: OutlineInputBorder(
-                                                                                  borderSide: BorderSide(
-                                                                                    color: FlutterFlowTheme.of(context).error,
-                                                                                    width: 1.0,
-                                                                                  ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
-                                                                                ),
-                                                                                focusedErrorBorder: OutlineInputBorder(
-                                                                                  borderSide: BorderSide(
-                                                                                    color: FlutterFlowTheme.of(context).error,
-                                                                                    width: 1.0,
-                                                                                  ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
-                                                                                ),
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium,
-                                                                              validator: _model.cantidadControllerValidator.asValidator(context),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ],
                                                                   ),
                                                                 ),
                                                               ],
@@ -2010,8 +1927,7 @@ class _DimensionesPageWidgetState extends State<DimensionesPageWidget> {
 
                                       await widget.currentShip!.reference
                                           .update(createEnviosRecordData(
-                                        cantidad: int.tryParse(
-                                            _model.cantidadController.text),
+                                        cantidad: 1,
                                         step: 'tarifa',
                                         paquete: createParcelStruct(
                                           parcelType: 'box',

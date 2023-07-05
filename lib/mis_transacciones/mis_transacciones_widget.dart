@@ -328,7 +328,9 @@ class _MisTransaccionesWidgetState extends State<MisTransaccionesWidget> {
                                                           isEqualTo: valueOrDefault(
                                                               currentUserDocument
                                                                   ?.plataforma,
-                                                              '')),
+                                                              ''))
+                                                      .orderBy('createdAt',
+                                                          descending: true),
                                             ),
                                             builder: (context, snapshot) {
                                               // Customize what your widget looks like when it's loading.
@@ -516,15 +518,24 @@ class _MisTransaccionesWidgetState extends State<MisTransaccionesWidget> {
                                                                         FlutterFlowExpandedImageView(
                                                                       image: Image
                                                                           .network(
-                                                                        listViewTransaccionesRecord
-                                                                            .imagenPago,
+                                                                        valueOrDefault<
+                                                                            String>(
+                                                                          listViewTransaccionesRecord
+                                                                              .imagenPago,
+                                                                          'https://firebasestorage.googleapis.com/v0/b/plataforma-7f84e.appspot.com/o/defectoproducto.jpg?alt=media&token=14bf3c77-b82f-4dd3-81fd-969d2efba5e5',
+                                                                        ),
                                                                         fit: BoxFit
                                                                             .contain,
                                                                       ),
                                                                       allowRotation:
                                                                           false,
-                                                                      tag: listViewTransaccionesRecord
-                                                                          .imagenPago,
+                                                                      tag: valueOrDefault<
+                                                                          String>(
+                                                                        listViewTransaccionesRecord
+                                                                            .imagenPago,
+                                                                        'https://firebasestorage.googleapis.com/v0/b/plataforma-7f84e.appspot.com/o/defectoproducto.jpg?alt=media&token=14bf3c77-b82f-4dd3-81fd-969d2efba5e5' +
+                                                                            '$listViewIndex',
+                                                                      ),
                                                                       useHeroAnimation:
                                                                           true,
                                                                     ),
@@ -532,8 +543,14 @@ class _MisTransaccionesWidgetState extends State<MisTransaccionesWidget> {
                                                                 );
                                                               },
                                                               child: Hero(
-                                                                tag: listViewTransaccionesRecord
-                                                                    .imagenPago,
+                                                                tag:
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                  listViewTransaccionesRecord
+                                                                      .imagenPago,
+                                                                  'https://firebasestorage.googleapis.com/v0/b/plataforma-7f84e.appspot.com/o/defectoproducto.jpg?alt=media&token=14bf3c77-b82f-4dd3-81fd-969d2efba5e5' +
+                                                                      '$listViewIndex',
+                                                                ),
                                                                 transitionOnUserGestures:
                                                                     true,
                                                                 child:
@@ -544,8 +561,12 @@ class _MisTransaccionesWidgetState extends State<MisTransaccionesWidget> {
                                                                               8.0),
                                                                   child: Image
                                                                       .network(
-                                                                    listViewTransaccionesRecord
-                                                                        .imagenPago,
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      listViewTransaccionesRecord
+                                                                          .imagenPago,
+                                                                      'https://firebasestorage.googleapis.com/v0/b/plataforma-7f84e.appspot.com/o/defectoproducto.jpg?alt=media&token=14bf3c77-b82f-4dd3-81fd-969d2efba5e5',
+                                                                    ),
                                                                     width:
                                                                         100.0,
                                                                     height:

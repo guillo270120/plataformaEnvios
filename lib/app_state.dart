@@ -64,6 +64,54 @@ class FFAppState extends ChangeNotifier {
           await secureStorage.getBool('ff_guardarDatosBancarios') ??
               _guardarDatosBancarios;
     });
+    await _safeInitAsync(() async {
+      if (await secureStorage.read(key: 'ff_origen') != null) {
+        try {
+          final serializedData =
+              await secureStorage.getString('ff_origen') ?? '{}';
+          _origen = OriginAttributesStruct.fromSerializableMap(
+              jsonDecode(serializedData));
+        } catch (e) {
+          print("Can't decode persisted data type. Error: $e.");
+        }
+      }
+    });
+    await _safeInitAsync(() async {
+      _origenAgregado =
+          await secureStorage.getBool('ff_origenAgregado') ?? _origenAgregado;
+    });
+    await _safeInitAsync(() async {
+      if (await secureStorage.read(key: 'ff_destino') != null) {
+        try {
+          final serializedData =
+              await secureStorage.getString('ff_destino') ?? '{}';
+          _destino = DestinationAttributesStruct.fromSerializableMap(
+              jsonDecode(serializedData));
+        } catch (e) {
+          print("Can't decode persisted data type. Error: $e.");
+        }
+      }
+    });
+    await _safeInitAsync(() async {
+      _destinoAgregado =
+          await secureStorage.getBool('ff_destinoAgregado') ?? _destinoAgregado;
+    });
+    await _safeInitAsync(() async {
+      if (await secureStorage.read(key: 'ff_paquete') != null) {
+        try {
+          final serializedData =
+              await secureStorage.getString('ff_paquete') ?? '{}';
+          _paquete =
+              ParcelStruct.fromSerializableMap(jsonDecode(serializedData));
+        } catch (e) {
+          print("Can't decode persisted data type. Error: $e.");
+        }
+      }
+    });
+    await _safeInitAsync(() async {
+      _paqueteAgregado =
+          await secureStorage.getBool('ff_paqueteAgregado') ?? _paqueteAgregado;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -207,7 +255,7 @@ class FFAppState extends ChangeNotifier {
     secureStorage.delete(key: 'ff_nombrePlataforma');
   }
 
-  String _version = '1.1.1';
+  String _version = '1.2.0';
   String get version => _version;
   set version(String _value) {
     _version = _value;
@@ -238,6 +286,87 @@ class FFAppState extends ChangeNotifier {
 
   void deleteGuardarDatosBancarios() {
     secureStorage.delete(key: 'ff_guardarDatosBancarios');
+  }
+
+  OriginAttributesStruct _origen = OriginAttributesStruct();
+  OriginAttributesStruct get origen => _origen;
+  set origen(OriginAttributesStruct _value) {
+    _origen = _value;
+    secureStorage.setString('ff_origen', _value.serialize());
+  }
+
+  void deleteOrigen() {
+    secureStorage.delete(key: 'ff_origen');
+  }
+
+  void updateOrigenStruct(Function(OriginAttributesStruct) updateFn) {
+    updateFn(_origen);
+    secureStorage.setString('ff_origen', _origen.serialize());
+  }
+
+  bool _origenAgregado = false;
+  bool get origenAgregado => _origenAgregado;
+  set origenAgregado(bool _value) {
+    _origenAgregado = _value;
+    secureStorage.setBool('ff_origenAgregado', _value);
+  }
+
+  void deleteOrigenAgregado() {
+    secureStorage.delete(key: 'ff_origenAgregado');
+  }
+
+  DestinationAttributesStruct _destino = DestinationAttributesStruct();
+  DestinationAttributesStruct get destino => _destino;
+  set destino(DestinationAttributesStruct _value) {
+    _destino = _value;
+    secureStorage.setString('ff_destino', _value.serialize());
+  }
+
+  void deleteDestino() {
+    secureStorage.delete(key: 'ff_destino');
+  }
+
+  void updateDestinoStruct(Function(DestinationAttributesStruct) updateFn) {
+    updateFn(_destino);
+    secureStorage.setString('ff_destino', _destino.serialize());
+  }
+
+  bool _destinoAgregado = false;
+  bool get destinoAgregado => _destinoAgregado;
+  set destinoAgregado(bool _value) {
+    _destinoAgregado = _value;
+    secureStorage.setBool('ff_destinoAgregado', _value);
+  }
+
+  void deleteDestinoAgregado() {
+    secureStorage.delete(key: 'ff_destinoAgregado');
+  }
+
+  ParcelStruct _paquete = ParcelStruct();
+  ParcelStruct get paquete => _paquete;
+  set paquete(ParcelStruct _value) {
+    _paquete = _value;
+    secureStorage.setString('ff_paquete', _value.serialize());
+  }
+
+  void deletePaquete() {
+    secureStorage.delete(key: 'ff_paquete');
+  }
+
+  void updatePaqueteStruct(Function(ParcelStruct) updateFn) {
+    updateFn(_paquete);
+    secureStorage.setString('ff_paquete', _paquete.serialize());
+  }
+
+  bool _paqueteAgregado = false;
+  bool get paqueteAgregado => _paqueteAgregado;
+  set paqueteAgregado(bool _value) {
+    _paqueteAgregado = _value;
+    secureStorage.setBool('ff_paqueteAgregado', _value);
+  }
+
+  void deletePaqueteAgregado() {
+    secureStorage.delete(key: 'ff_paqueteAgregado');
   }
 }
 
